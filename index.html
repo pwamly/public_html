@@ -4,14 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">StepCob</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <iframe allow="microphone;" width="350" height="430"
-        src="https://console.dialogflow.com/api-client/demo/embedded/648907c0-7ff7-4f65-8f99-d0a27c0e2656">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Contacts</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Chat Bots!</a>
+                        <a class="dropdown-item" href="#">Web systems developmnet</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  active" href="#demo">Demo</a>
+                </li>
 
-</body>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="green-text"><span>&#x1F60A;</span></div>
+    <div id="main-div">
+        <div id="greetings">
+            <span style="color:#31856A;">Hey</span> <span style="color: #345E4A;">there!</span>
+        </div>
+
+        <div id="who-we-are">
+            "Stepcob embodies the spirit of continuous advancement and collaboration in the tech space. We are dedicated
+            to making strides forward, embracing innovation, and fostering meaningful collaborations to shape a dynamic
+            and impactful future." </div>
+       
+    </div>
+ <div id="demo">
+    <div class="">
+        <h1 class="text-center">Chat Demos!</h1>
+        <div class="form-group mt-3">
+            <label for="selectDemo">Select Demo:</label>
+            <select class="form-control" id="selectDemo">
+                <option value="" selected disabled>Select an option</option>
+                <option value="botsDemo">M-Bot</option>
+                <option value="None">None</option>
+            </select>
+        </div>
+        <iframe id="demoFrame" allow="microphone;" width="350" height="430"
+        src="https://console.dialogflow.com/api-client/demo/embedded/648907c0-7ff7-4f65-8f99-d0a27c0e2656"
+        style="display: none;"></iframe>    </div>
+
+
+ </div>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('#selectDemo').change(function () {
+                    var selectedDemo = $(this).val();
+                    if (selectedDemo == 'botsDemo') {
+                        console.log('rrrrrrrrrrrrrrrrrr',selectedDemo);
+                        $('#demoFrame').show();
+                    } else {
+                        $('#demoFrame').hide();
+                    }
+                });
+            });
+        </script>
 
 </html>
